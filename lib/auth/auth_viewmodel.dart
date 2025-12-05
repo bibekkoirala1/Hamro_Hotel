@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'auth_service.dart';
+import 'package:my_app/auth/auth_service.dart';
 
 class AuthViewModel extends ChangeNotifier {
   bool loading = false;
