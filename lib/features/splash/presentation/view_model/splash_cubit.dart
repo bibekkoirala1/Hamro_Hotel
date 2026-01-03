@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/features/onBoarding/presentation/view/onboarding_screen_view.dart';
-import 'package:hotel_booking/features/onBoarding/presentation/view_model/onboarding_cubit.dart';
+import 'package:my_app/features/onboarding/presentation/view/onboarding_screen_view.dart';
+import 'package:my_app/features/onboarding/presentation/view_model/onboarding_cubit.dart';
 
 
 
