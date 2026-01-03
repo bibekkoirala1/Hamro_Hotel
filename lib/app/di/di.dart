@@ -1,66 +1,46 @@
-import 'package:dio/dio.dart';
-import 'package:get_it/get_it.dart';
-import 'package:hotel_booking/app/shared_prefs/token_shared_prefs.dart';
-import 'package:hotel_booking/core/network/api_service.dart';
-import 'package:hotel_booking/core/network/hive_service.dart';
-import 'package:hotel_booking/features/auth/data/data_source/local_datasource/local_datasource.dart';
-import 'package:hotel_booking/features/auth/data/data_source/remote_datasource/booking_remote_datasource.dart';
-import 'package:hotel_booking/features/auth/data/data_source/remote_datasource/contact_remote_datasource.dart';
-import 'package:hotel_booking/features/auth/data/data_source/remote_datasource/user_profile_service.dart';
-import 'package:hotel_booking/features/auth/data/data_source/remote_datasource/user_remote_datasource.dart';
 
-
-
-import 'package:hotel_booking/features/auth/data/repositories/booking_repository_impl.dart';
-import 'package:hotel_booking/features/auth/data/repositories/contact_repository_impl.dart';
-import 'package:hotel_booking/features/auth/data/repositories/user_local_repository.dart';
-import 'package:hotel_booking/features/auth/data/repositories/user_remote_repository.dart';
-
-
-import 'package:hotel_booking/features/auth/domain/repository/booking_repository.dart';
-import 'package:hotel_booking/features/auth/domain/repository/contact_repository.dart';
-
-
-import 'package:hotel_booking/features/auth/domain/use_case/approve_bookings_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/cancel_bookings_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/create_booking_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/create_user_usecase.dart';
-
-
-import 'package:hotel_booking/features/auth/domain/use_case/delete_bookings_usecase.dart';
-
-
-import 'package:hotel_booking/features/auth/domain/use_case/delte_contact_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/get_all_bookings_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/get_all_contact_usecase.dart';
-
-
-import 'package:hotel_booking/features/auth/domain/use_case/get_user_bookings.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/login_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/submit_contact_usecase.dart';
-
-
-import 'package:hotel_booking/features/auth/domain/use_case/upload_image_usecase.dart';
-import 'package:hotel_booking/features/auth/presentation/view_model/login/login_bloc.dart';
-import 'package:hotel_booking/features/auth/presentation/view_model/signup/register_bloc.dart';
-import 'package:hotel_booking/features/dashboard1/Bottom_Screen/view_model/contact_bloc_view.dart';
-import 'package:hotel_booking/features/dashboard1/admin_screens/view_model/booking_bloc.dart';
-import 'package:hotel_booking/features/dashboard1/admin_screens/view_model/contact_bloc.dart';
-
-
-import 'package:hotel_booking/features/home/presentation/view_model/home_cubit.dart';
-import 'package:hotel_booking/features/onBoarding/presentation/view_model/onboarding_cubit.dart';
-import 'package:hotel_booking/features/splash/presentation/view_model/splash_cubit.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:hotel_booking/features/auth/data/data_source/remote_datasource/hotels_remote_datasource.dart';
-import 'package:hotel_booking/features/auth/data/repositories/hotel_repository_impl.dart';
-import 'package:hotel_booking/features/auth/domain/repository/hotel_repository_final.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/create_hotel_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/delete_hotel_usecase.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/get_all_hotel_usecase.dart';
-import 'package:hotel_booking/features/dashboard1/admin_screens/view_model/hotel_bloc.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/update_hotel_usecase.dart';
+import 'package:my_app/app/shared_prefs/token_shared_prefs.dart';
+import 'package:my_app/core/network/api_service.dart';
+import 'package:my_app/core/network/hive_service.dart';
+import 'package:my_app/features/auth/data/data_source/local_datasource/local_datasource.dart';
+import 'package:my_app/features/auth/data/data_source/remote_datasource/booking_remote_datasource.dart';
+import 'package:my_app/features/auth/data/data_source/remote_datasource/contact_remote_datasource.dart';
+import 'package:my_app/features/auth/data/data_source/remote_datasource/hotels_remote_datasource.dart';
+import 'package:my_app/features/auth/data/data_source/remote_datasource/user_profile_service.dart';
+import 'package:my_app/features/auth/data/data_source/remote_datasource/user_remote_datasource.dart';
+import 'package:my_app/features/auth/data/repositories/booking_repository_impl.dart';
+import 'package:my_app/features/auth/data/repositories/contact_repository_impl.dart';
+import 'package:my_app/features/auth/data/repositories/hotel_repository_impl.dart';
+import 'package:my_app/features/auth/data/repositories/user_local_repository.dart';
+import 'package:my_app/features/auth/data/repositories/user_remote_repository.dart';
+import 'package:my_app/features/auth/domain/repository/booking_repository.dart';
+import 'package:my_app/features/auth/domain/repository/contact_repository.dart';
+import 'package:my_app/features/auth/domain/repository/hotels_repository.dart';
+import 'package:my_app/features/auth/domain/use_case/approve_bookings_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/cancel_bookings_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/create_booking_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/create_hotel_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/create_user_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/delete_bookings_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/delete_hotel_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/delte_contact_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/get_all_bookings_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/get_all_contact_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/get_all_hotel_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/get_user_bookings.dart';
+import 'package:my_app/features/auth/domain/use_case/login_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/submit_contact_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/update_hotel_usecase.dart';
+import 'package:my_app/features/auth/domain/use_case/upload_image_usecase.dart';
+import 'package:my_app/features/auth/presentation/view_model/login/login_bloc.dart';
+import 'package:my_app/features/auth/presentation/view_model/signup/register_bloc.dart';
+import 'package:my_app/features/dashboard1/Bottom_Screen/view_model/contact_bloc_view.dart';
+import 'package:my_app/features/dashboard1/admin_screens/view_model/booking_bloc.dart';
+import 'package:my_app/features/dashboard1/admin_screens/view_model/contact_bloc.dart';
+import 'package:my_app/features/dashboard1/admin_screens/view_model/hotel_bloc.dart';
+import 'package:my_app/features/home/presentation/view_model/home_cubit.dart';
+import 'package:my_app/features/onboarding/presentation/view_model/onboarding_cubit.dart';
+import 'package:my_app/features/splash/presentation/view_model/splash_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -164,7 +144,7 @@ _initSplashScreenDependencies() async {
 
 _initContactDependencies() async {
   // Contact Management Dependencies (Submit, Get All & Delete)
-  getIt.registerLazySingleton<ContactRemoteDataSource>(
+  getIt.registerLazySingleton<ContactRemoteDataSourceImpl>(
       () => ContactRemoteDataSourceImpl(getIt<Dio>()));
   getIt.registerLazySingleton<ContactRepository>(
       () => ContactRepositoryImpl(getIt<ContactRemoteDataSource>()));

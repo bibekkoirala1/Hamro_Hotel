@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:hotel_booking/app/app.dart';
-import 'package:hotel_booking/app/di/di.dart';
-import 'package:hotel_booking/core/network/hive_service.dart';
+import 'package:flutter/material.dart';7
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
