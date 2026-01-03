@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hotel_booking/features/home/presentation/view/bottom_view/sell_view.dart';
 import 'package:hotel_booking/features/home/presentation/view_model/home_cubit.dart';
-import 'package:hotel_booking/features/home/presentation/view_model/home_state.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:my_app/features/home/presentation/view/bottom_view/sell_view.dart';
+import 'package:my_app/features/home/presentation/view_model/home_cubit.dart';
 
 
 class HomeView extends StatelessWidget {
