@@ -10,9 +10,9 @@ import 'package:hotel_booking/features/dashboard1/admin_screens/admin_booking_pa
 import 'package:hotel_booking/features/dashboard1/admin_screens/view_contact.dart';
 import 'package:hotel_booking/features/dashboard1/admin_screens/view_user.dart';
 import 'package:hotel_booking/features/dashboard1/admin_screens/view_hotel.dart';
+import 'package:my_app/features/auth/presentation/view/login_view.dart';
 import 'package:proximity_sensor/proximity_sensor.dart';
 import 'package:sensors_plus/sensors_plus.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 
 
