@@ -1,7 +1,6 @@
-import 'package:dartz/dartz.dart';
-import 'package:hotel_booking/core/error/failure.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:my_app/core/error/failure.dart';
 
 class TokenSharedPrefs {
   final SharedPreferences _sharedPreferences;
