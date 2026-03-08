@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:proximity_sensor/proximity_sensor.dart';
 
-
 class NearDetector extends StatefulWidget {
   final Widget child;
   final VoidCallback onNearDetected;

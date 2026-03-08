@@ -1,6 +1,6 @@
-
-
-import 'package:my_app/core/error/failure.dart';
+import 'package:dartz/dartz.dart';
+import 'package:sajilobihe_event_venue_booking_system/core/error/failure.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TokenSharedPrefs {
   final SharedPreferences _sharedPreferences;

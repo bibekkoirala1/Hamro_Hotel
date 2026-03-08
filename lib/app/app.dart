@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
-import 'package:my_app/features/dashboard1/Bottom_Screen/view_model/contact_bloc_view.dart';
-import 'package:my_app/features/dashboard1/admin_screens/view_model/hotel_bloc.dart';
-import 'package:my_app/features/home/presentation/view_model/home_cubit.dart';
-import 'package:my_app/features/splash/presentation/view/splash_view.dart';
-import 'package:my_app/features/splash/presentation/view_model/splash_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sajilobihe_event_venue_booking_system/app/di/di.dart';
+import 'package:sajilobihe_event_venue_booking_system/core/theme/app_theme.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/presentation/view_model/login/login_bloc.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/presentation/view_model/signup/register_bloc.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/contact_us/presentation/view_model/user/contact_bloc_view.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/venue/presentation/view_model/admin/venue_bloc.dart';
 
+import 'package:sajilobihe_event_venue_booking_system/features/splash/presentation/view/splash_view.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/splash/presentation/view_model/splash_cubit.dart';
 // Import VenueBloc for venue management
 
 
@@ -19,9 +22,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<SplashCubit>(
           create: (_) => getIt<SplashCubit>(),
         ),
-        BlocProvider<HomeCubit>(
-          create: (_) => getIt<HomeCubit>(),
-        ),
+      
         BlocProvider<RegisterBloc>(
           create: (_) => getIt<RegisterBloc>(),
         ),
@@ -39,8 +40,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Quick Stay',
-        theme: AppTheme.getApplicationTheme(isDarkMode: false),
+        title: 'Sajilo bihe',
+        theme: getApplicationTheme(),
         home: const SplashView(),
       ),
     );

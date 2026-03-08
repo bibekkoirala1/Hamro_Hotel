@@ -1,11 +1,10 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:hotel_booking/core/error/failure.dart';
-import 'package:hotel_booking/features/auth/data/data_source/remote_datasource/user_remote_datasource.dart';
-import 'package:hotel_booking/features/auth/domain/entity/user_entity.dart';
-import 'package:hotel_booking/features/auth/domain/repository/user_repository.dart';
-
+import 'package:sajilobihe_event_venue_booking_system/core/error/failure.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/data/data_source/remote_datasource/user_remote_datasource.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/domain/entity/user_entity.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/domain/repository/user_repository.dart';
 
 class UserRemoteRepository implements IUserRepository {
   final UserRemoteDataSource _userRemoteDatasource;
@@ -75,13 +74,14 @@ class UserRemoteRepository implements IUserRepository {
   }
 
   // New method: get profile data
-   @override
   Future<Either<Failure, UserEntity>> getProfile(String token) async {
     try {
       final user = await _userRemoteDatasource.getProfile(token);
       return Right(user);
     } catch (e) {
-      return Left(ApiFailure(message: "Failed to fetch user profile: ${e.toString()}", statusCode: 400));
+      return Left(ApiFailure(
+          message: "Failed to fetch user profile: ${e.toString()}",
+          statusCode: 400));
     }
   }
 }
