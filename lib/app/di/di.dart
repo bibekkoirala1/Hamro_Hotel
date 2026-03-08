@@ -157,7 +157,6 @@ _initContactDependencies() async {
 }
 
 _initBookingDependencies() async {
-  // Booking Management Dependencies
   getIt.registerLazySingleton<BookingRemoteDataSource>(
       () => BookingRemoteDataSourceImpl(getIt<Dio>()));
   getIt.registerLazySingleton<BookingRepository>(
@@ -185,7 +184,6 @@ _initBookingDependencies() async {
 
 
 _initVenueDependencies() async {
-  // Venue Management Dependencies
   getIt.registerLazySingleton<VenueRemoteDataSource>(
       () => VenueRemoteDataSourceImpl(getIt<Dio>()));
   getIt.registerLazySingleton<VenueRepository>(
@@ -198,7 +196,6 @@ _initVenueDependencies() async {
       () => UpdateVenueUseCase(getIt<VenueRepository>()));
   getIt.registerLazySingleton<DeleteVenueUseCase>(
       () => DeleteVenueUseCase(getIt<VenueRepository>()));
-  // IMPORTANT: Ensure the VenueBloc import is the same in HomeScreen.
   getIt.registerFactory<VenueBloc>(() => VenueBloc(
       getAllVenuesUseCase: getIt<GetAllVenuesUseCase>(),
       addVenueUseCase: getIt<AddVenueUseCase>(),
