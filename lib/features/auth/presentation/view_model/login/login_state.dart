@@ -28,5 +28,5 @@ class LoginState extends Equatable {
 
   @override
   List<Object> get props =>
-      [isLoading, isSuccess]; // ✅ Enables proper state comparison
+      [isLoading, isSuccess]; 
 }
