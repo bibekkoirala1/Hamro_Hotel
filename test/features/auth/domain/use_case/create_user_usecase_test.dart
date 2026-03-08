@@ -20,11 +20,11 @@ void main() {
     usecase = CreateUserUsecase(userRepository: mockUserRepository);
   });
 
-  const tFullName = 'Bibhakta Lamsal';
-  const tEmail = 'bibhakta@gmail.com';
-  const tPassword = 'bibhakta';
+  const tFullName = 'bibek koirala';
+  const tEmail = 'bibek@gmail.com';
+  const tPassword = 'bibek';
   const tPhone = '9813056161';
-  const tAddress = 'kalanki';
+  const tAddress = 'Baneshwor';
   const tRole = 'user';
   const tAvatar = 'avatar.png';
 

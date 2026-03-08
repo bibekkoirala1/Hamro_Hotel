@@ -23,8 +23,8 @@ void main() {
   final tUserList = [
     UserEntity(
       userId: "1",
-      fullName: "Bibhakta Lamsal",
-      email: "bibhakta@gmail.com",
+      fullName: "Bibek koirala",
+      email: "bibek@gmail.com",
       password: "password",
       phone: "9813056161",
       address: "Address 1",
@@ -33,8 +33,8 @@ void main() {
     ),
      UserEntity(
       userId: "2",
-      fullName: "Bibhakta Lamsal",
-      email: "bibhakta@gmail.com",
+      fullName: "Bibek koirala",
+      email: "bibek@gmail.com",
       password: "password",
       phone: "9813056161",
       address: "Address 1",
