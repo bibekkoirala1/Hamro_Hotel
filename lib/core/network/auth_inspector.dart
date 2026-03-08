@@ -9,11 +9,9 @@ class AuthInterceptor extends Interceptor {
   @override
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    // Retrieve the token from shared preferences
     final tokenEither = await tokenSharedPrefs.getToken();
     tokenEither.fold(
       (failure) {
-        // Optionally handle failure if needed
       },
       (token) {
         if (token.isNotEmpty) {
