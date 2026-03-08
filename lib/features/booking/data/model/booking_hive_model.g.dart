@@ -2,9 +2,7 @@
 
 part of 'booking_hive_model.dart';
 
-// **************************************************************************
-// TypeAdapterGenerator
-// **************************************************************************
+
 
 class BookingHiveModelAdapter extends TypeAdapter<BookingHiveModel> {
   @override
