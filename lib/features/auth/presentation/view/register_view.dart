@@ -195,7 +195,6 @@ class _RegisterViewState extends State<RegisterView> {
                             avatar: imageName,
                           ),
                         );
-                        // Clear fields after successful registration
                         _nameController.clear();
                         _emailController.clear();
                         _passwordController.clear();
