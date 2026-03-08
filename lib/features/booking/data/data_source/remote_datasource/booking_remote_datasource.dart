@@ -22,7 +22,6 @@ class BookingRemoteDataSourceImpl implements BookingRemoteDataSource {
       if (response.statusCode == 201) {
         return BookingModel.fromJson(response.data['booking']);
       } else {
-        // If the status is 400 or other, the DioErrorInterceptor will already set the error text.
         // So we can just throw an Exception or return a default error:
         throw Exception('Failed to create booking');
       }
