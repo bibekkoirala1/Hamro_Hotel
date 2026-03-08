@@ -2,7 +2,6 @@ import 'package:sajilobihe_event_venue_booking_system/features/venue/data/data_s
 import 'package:sajilobihe_event_venue_booking_system/features/venue/domain/entity/venue.dart';
 import 'package:sajilobihe_event_venue_booking_system/features/venue/domain/repository/venue_repository_final.dart';
 
-/// Repository implementation that delegates calls to the remote data source.
 class VenueRepositoryImpl implements VenueRepository {
   final VenueRemoteDataSource remoteDataSource;
 
