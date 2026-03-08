@@ -21,18 +21,16 @@ class LoginView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Form(
-              key: _loginFormKey, // Wrap the form with the form key
+              key: _loginFormKey, 
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Logo with elephants and design
                   Image.asset(
-                    'assets/images/logo.png', // Add your logo image path here
+                    'assets/images/logo.png', 
                     height: 200,
                   ),
                   const SizedBox(height: 24),
 
-                  // Welcome text
                   const Text(
                     "Welcome back",
                     style: TextStyle(
