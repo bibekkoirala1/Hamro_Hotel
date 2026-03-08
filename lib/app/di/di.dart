@@ -54,8 +54,8 @@ Future<void> initDependencies() async {
   await _initOnBoardingScreenDependencies();
   await _initSplashScreenDependencies();
   await _initContactDependencies();
-  await _initBookingDependencies(); // NEW booking dependencies
-  await _initVenueDependencies(); // Add venue management dependencies
+  await _initBookingDependencies(); 
+  await _initVenueDependencies(); 
 }
 
 Future<void> _initSharedPreferences() async {
