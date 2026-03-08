@@ -1,4 +1,3 @@
-// shake_detector.dart
 import 'dart:async';
 import 'dart:math';
 

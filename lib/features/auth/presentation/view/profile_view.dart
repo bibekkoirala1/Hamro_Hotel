@@ -38,7 +38,6 @@ class _ProfileViewState extends State<ProfileView> {
             return SingleChildScrollView(
               child: Column(
                 children: [
-                  // PROFILE HEADER
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
