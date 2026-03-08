@@ -5,7 +5,6 @@ class BookingEntity {
   final DateTime bookingDate;
   final String status;
 
-  // Extended fields from populated data:
   final String? userName;
   final String? userEmail;
   final String? userPhone;
