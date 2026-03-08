@@ -24,7 +24,6 @@ class _NearDetectorState extends State<NearDetector> {
   void initState() {
     super.initState();
     _proximitySubscription = ProximitySensor.events.listen((int event) {
-      // Typically, a value of 1 means something is near.
       if (event == 1 && !_hasTriggered) {
         _hasTriggered = true;
         widget.onNearDetected();
