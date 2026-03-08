@@ -60,7 +60,6 @@ class BookingModel extends BookingEntity {
       if (venueField is Map<String, dynamic>) {
         venueId = venueField['_id'] ?? '';
         venueName = venueField['name'] ?? '';
-        // NEW: Parse price and capacity
         if (venueField['price'] != null) {
           venuePrice = (venueField['price'] as num).toDouble();
         }
