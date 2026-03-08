@@ -13,7 +13,6 @@ class UserLocalDataSource implements IUserDataSource {
   @override
   Future<void> createUser(UserEntity userEntity) async {
     try {
-      // Convert UserEntity to UserHiveModel
       final userHiveModel = UserHiveModel.fromEntity(userEntity);
       await _hiveService.addUser(userHiveModel);
     } catch (e) {
