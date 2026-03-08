@@ -57,7 +57,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         return;
       }
 
-      // ✅ Ensure the event handler does not complete before async operations finish
       final token = result.getOrElse(() => "");
       emit(state.copyWith(isLoading: false, isSuccess: true));
 
