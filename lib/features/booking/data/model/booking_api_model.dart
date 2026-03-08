@@ -32,7 +32,6 @@ class BookingModel extends BookingEntity {
         );
 
   factory BookingModel.fromJson(Map<String, dynamic> json) {
-    // Parse user details (populated)
     String userId = '';
     String userName = '';
     String userEmail = '';
