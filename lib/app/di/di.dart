@@ -68,12 +68,10 @@ _initHiveService() async {
 }
 
 _initApiService() {
-  // Register Dio instance wrapped with your ApiService
   getIt.registerLazySingleton<Dio>(
     () => ApiService(Dio()).dio,
   );
 
-  // Register UserProfileService
   getIt.registerLazySingleton<UserProfileService>(
     () => UserProfileService(getIt<Dio>()),
   );
