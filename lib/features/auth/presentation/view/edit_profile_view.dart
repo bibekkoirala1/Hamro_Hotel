@@ -58,7 +58,6 @@ class _EditProfileViewState extends State<EditProfileView> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Profile updated successfully")),
       );
-      // Return updated user info to refresh the profile view if needed
       Navigator.pop(context, updatedUser);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
