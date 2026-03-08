@@ -4,7 +4,7 @@ import 'package:sajilobihe_event_venue_booking_system/app/constants/hive_table_c
 import 'package:sajilobihe_event_venue_booking_system/features/booking/domain/entity/booking_entity.dart';
 import 'package:uuid/uuid.dart';
 
-part 'booking_hive_model.g.dart'; // For Hive's generated adapter
+part 'booking_hive_model.g.dart'; 
 
 @HiveType(typeId: HiveTableConstant.bookingTableId)
 class BookingHiveModel extends Equatable {
