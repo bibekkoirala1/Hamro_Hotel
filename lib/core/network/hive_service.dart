@@ -8,7 +8,6 @@ import 'package:sajilobihe_event_venue_booking_system/features/venue/data/model/
 
 class HiveService {
   Future<void> init() async {
-    // Initialize the database
     var directory = await getApplicationDocumentsDirectory();
     var path = '${directory.path}sajilobihe_event_venue_booking_system.db';
 
