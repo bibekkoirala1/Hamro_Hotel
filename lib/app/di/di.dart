@@ -138,7 +138,6 @@ _initSplashScreenDependencies() async {
 
 
 _initContactDependencies() async {
-  // Contact Management Dependencies (Submit, Get All & Delete)
   getIt.registerLazySingleton<ContactRemoteDataSource>(
       () => ContactRemoteDataSourceImpl(getIt<Dio>()));
   getIt.registerLazySingleton<ContactRepository>(
