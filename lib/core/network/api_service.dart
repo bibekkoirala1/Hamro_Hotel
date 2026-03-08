@@ -16,7 +16,6 @@ class ApiService {
       ..options.baseUrl = ApiEndpoints.baseUrl
       ..options.connectTimeout = ApiEndpoints.connectionTimeout
       ..options.receiveTimeout = ApiEndpoints.receiveTimeout
-      // Add the error interceptor
       ..interceptors.add(DioErrorInterceptor())
       // Log requests and responses
       ..interceptors.add(PrettyDioLogger(
