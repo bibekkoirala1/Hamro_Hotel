@@ -5,7 +5,6 @@ import 'package:sajilobihe_event_venue_booking_system/features/auth/domain/entit
 import 'package:uuid/uuid.dart';
 
 part 'user_hive_model.g.dart';
-// dart run build_runner build -d
 
 @HiveType(typeId: HiveTableConstant.userTableId)
 class UserHiveModel extends Equatable {
