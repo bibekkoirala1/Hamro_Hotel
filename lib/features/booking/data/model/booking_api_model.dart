@@ -48,7 +48,6 @@ class BookingModel extends BookingEntity {
       }
     }
 
-    // Parse venue details (populated)
     String venueId = '';
     String venueName = '';
     List<String> venueImages = [];
