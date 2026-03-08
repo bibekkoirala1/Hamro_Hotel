@@ -59,7 +59,6 @@ class UserLocalRepository implements IUserRepository {
 
   @override
   Future<Either<Failure, String>> uploadProfilePicture(File file) {
-    // TODO: implement uploadProfilePicture
     throw UnimplementedError();
   }
 
