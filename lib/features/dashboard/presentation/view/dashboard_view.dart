@@ -38,7 +38,6 @@ class _DashboardViewState extends State<DashboardView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      // Wrap the whole scaffold with NearDetector.
       child: NearDetector(
         onNearDetected: _cycleBottomNav,
         child: Scaffold(
