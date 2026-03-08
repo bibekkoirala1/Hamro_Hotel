@@ -19,7 +19,6 @@ void main() {
   const tId = '123';
 
   test('should return true when deletion is successful', () async {
-    // Arrange
     when(() => mockContactRepository.deleteContact(tId))
         .thenAnswer((_) async => true);
 
