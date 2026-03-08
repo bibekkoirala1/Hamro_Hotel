@@ -136,7 +136,6 @@ _initSplashScreenDependencies() async {
 
 
 _initContactDependencies() async {
-  // Contact Management Dependencies (Submit, Get All & Delete)
   getIt.registerLazySingleton<ContactRemoteDataSource>(
       () => ContactRemoteDataSourceImpl(getIt<Dio>()));
   getIt.registerLazySingleton<ContactRepository>(
@@ -148,11 +147,9 @@ _initContactDependencies() async {
   getIt.registerLazySingleton<DeleteContactUseCase>(
       () => DeleteContactUseCase(getIt<ContactRepository>()));
   
-  // Register the ContactBlocView for user contact submission
   getIt.registerFactory<ContactBlocView>(
       () => ContactBlocView(getIt<SubmitContactUseCase>()));
   
-  // Register the admin ContactBloc for managing contacts (get all & delete)
   getIt.registerFactory<ContactBloc>(
       () => ContactBloc(
           getAllContactsUseCase: getIt<GetAllContactsUseCase>(),
