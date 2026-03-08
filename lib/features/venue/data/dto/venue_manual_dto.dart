@@ -19,7 +19,6 @@ class VenueDTO {
     required this.available,
   });
 
-  /// Factory constructor to create `VenueDTO` from JSON
   factory VenueDTO.fromJson(Map<String, dynamic> json) {
     return VenueDTO(
       id: json['id'] as String,
