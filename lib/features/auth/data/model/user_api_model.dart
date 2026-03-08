@@ -36,7 +36,6 @@ class UserApiModel extends Equatable {
         role = '',
         avatar = '';
 
-  // From JSON
   factory UserApiModel.fromJson(Map<String, dynamic> json) {
     return UserApiModel(
       userId: json['_id'],
