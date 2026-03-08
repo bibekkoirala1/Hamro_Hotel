@@ -4,10 +4,8 @@ class DioErrorInterceptor extends Interceptor {
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
     if (err.response != null && err.response!.data != null) {
-      // Attempt to parse the error field from the server's response
       final data = err.response!.data;
 
-      // If the backend returns { "error": "You have already booked this venue." }
       // we set err.error to that string.
       if (data is Map && data['error'] != null) {
         err = DioException(
