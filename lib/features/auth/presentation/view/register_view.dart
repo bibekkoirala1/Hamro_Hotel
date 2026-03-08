@@ -2,12 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/core/common/widgets/custom_elevated_button.dart';
-import 'package:hotel_booking/core/common/widgets/custom_text_field.dart';
-import 'package:hotel_booking/features/auth/presentation/view_model/signup/register_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-
+import 'package:sajilobihe_event_venue_booking_system/app/constants/color_constants.dart';
+import 'package:sajilobihe_event_venue_booking_system/core/common/widgets/custom_elevated_button.dart';
+import 'package:sajilobihe_event_venue_booking_system/core/common/widgets/custom_text_field.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/presentation/view_model/signup/register_bloc.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -37,8 +37,8 @@ class _RegisterViewState extends State<RegisterView> {
         setState(() {
           _img = File(image.path);
           context.read<RegisterBloc>().add(
-                LoadImage(file: _img!),
-              );
+            LoadImage(file: _img!),
+          );
         });
       }
     } catch (e) {
@@ -59,15 +59,15 @@ class _RegisterViewState extends State<RegisterView> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 20),
-                  // Center(
-                  //   child: Image.asset(
-                  //     'assets/images/logo.png',
-                  //     height: 160,
-                  //   ),
-                  // ),
-
+                  Center(
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      height: 160,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
                   const Text(
-                    'Create Account',
+                    'Get Started',
                     style: TextStyle(
                       fontSize: 28.0,
                       color: Colors.black,
@@ -75,13 +75,13 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                   ),
                   const SizedBox(height: 5),
-                  // const Text(
-                  //   'By creating a free account.',
-                  //   style: TextStyle(
-                  //     fontSize: 14.0,
-                  //     color: Colors.grey,
-                  //   ),
-                  // ),
+                  const Text(
+                    'By creating a free account.',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.grey,
+                    ),
+                  ),
                   const SizedBox(height: 20),
                   Center(
                     child: Stack(
@@ -101,7 +101,7 @@ class _RegisterViewState extends State<RegisterView> {
                                 padding: const EdgeInsets.all(20),
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                                  MainAxisAlignment.spaceAround,
                                   children: [
                                     ElevatedButton.icon(
                                       onPressed: () {
@@ -134,36 +134,22 @@ class _RegisterViewState extends State<RegisterView> {
                             ),
                             child: _img != null
                                 ? CircleAvatar(
-                                    backgroundImage: FileImage(_img!),
-                                    radius: 75,
-                                  )
+                              backgroundImage: FileImage(_img!),
+                              radius: 75,
+                            )
                                 : const CircleAvatar(
-                                    radius: 75,
-                                    backgroundImage:
-                                        AssetImage('assets/images/pro.png'),
-                                  ),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.blue,
-                            ),
-                            padding: const EdgeInsets.all(8),
-                            child: const Icon(
-                              Icons.camera_alt,
-                              color: Colors.white,
-                              size: 20,
+                              radius: 75,
+                              child: Icon(
+                                Icons.person,
+                                size: 60,
+                                color: Colors.grey,
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 30),
                   CustomTextField(
                     controller: _nameController,
@@ -198,18 +184,17 @@ class _RegisterViewState extends State<RegisterView> {
                           );
                           return;
                         }
-                        final registerState =
-                            context.read<RegisterBloc>().state;
+                        final registerState = context.read<RegisterBloc>().state;
                         final imageName = registerState.imageName;
                         context.read<RegisterBloc>().add(
-                              RegisterUserEvent(
-                                context: context,
-                                fullName: _nameController.text.trim(),
-                                email: _emailController.text.trim(),
-                                password: _passwordController.text.trim(),
-                                avatar: imageName,
-                              ),
-                            );
+                          RegisterUserEvent(
+                            context: context,
+                            fullName: _nameController.text.trim(),
+                            email: _emailController.text.trim(),
+                            password: _passwordController.text.trim(),
+                            avatar: imageName,
+                          ),
+                        );
                         // Clear fields after successful registration
                         _nameController.clear();
                         _emailController.clear();
@@ -244,7 +229,6 @@ class _RegisterViewState extends State<RegisterView> {
     );
   }
 }
-
 class ValidateLogin {
   static String? fullNameValidate(String? value) {
     if (value == null || value.isEmpty) {

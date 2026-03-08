@@ -1,7 +1,5 @@
-
-
-
-import 'package:my_app/core/error/failure.dart';
+import 'package:dartz/dartz.dart';
+import 'package:sajilobihe_event_venue_booking_system/core/error/failure.dart';
 
 abstract interface class UsecaseWithParams<SuccessType, Params> {
   Future<Either<Failure, SuccessType>> call(Params params);

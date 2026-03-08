@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/core/common/widgets/custom_elevated_button.dart';
-import 'package:hotel_booking/core/common/widgets/custom_text_field.dart';
-import 'package:hotel_booking/features/auth/presentation/view/register_view.dart';
-import 'package:hotel_booking/features/auth/presentation/view_model/login/login_bloc.dart';
-
+import 'package:sajilobihe_event_venue_booking_system/core/common/widgets/custom_elevated_button.dart';
+import 'package:sajilobihe_event_venue_booking_system/core/common/widgets/custom_text_field.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/presentation/view/register_view.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/presentation/view_model/login/login_bloc.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -22,62 +21,56 @@ class LoginView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Form(
-              key: _loginFormKey,
+              key: _loginFormKey, // Wrap the form with the form key
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // Logo with elephants and design
+                  Image.asset(
+                    'assets/images/logo.png', // Add your logo image path here
+                    height: 200,
+                  ),
                   const SizedBox(height: 24),
 
-                  // Welcome Text with RichText
-                  RichText(
-                    text: TextSpan(
-                      text: 'Welcome',
-                      style: const TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontFamily: 'Nunito',
-                      ),
-                      children: [
-                        TextSpan(
-                          text: ' back',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
-                            fontFamily: 'Nunito',
-                          ),
-                        ),
-                      ],
+                  // Welcome text
+                  const Text(
+                    "Welcome back",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
                     "Sign in to access your account",
-                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
                   ),
                   const SizedBox(height: 32),
 
-                  // Email Input
+                  // Email TextField
                   CustomTextField(
                     controller: _emailController,
-                    validator: ValidateLogin.emailValidate,
+                    validator:
+                        ValidateLogin.emailValidate, // Add validator here
                     keyboardType: TextInputType.emailAddress,
                     hintText: 'Enter your email',
                   ),
                   const SizedBox(height: 16),
 
-                  // Password Input
+                  // Password TextField
                   CustomTextField(
                     controller: _passwordController,
-                    validator: ValidateLogin.passwordValidate,
+                    validator:
+                        ValidateLogin.passwordValidate, // Add validator here
                     keyboardType: TextInputType.visiblePassword,
                     hintText: 'Password',
-                    isPassword: true,
                   ),
                   const SizedBox(height: 8),
 
-                  // Forgot Password
+                  // Forgot password button
                   Align(
                     alignment: Alignment.centerRight,
                     child: InkWell(
@@ -92,24 +85,21 @@ class LoginView extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
 
-                  // Login Button
+                  // Login button
                   SizedBox(
                     width: double.infinity,
                     child: CustomElevatedButton(
                       text: "Login",
                       onPressed: () async {
                         if (_loginFormKey.currentState!.validate()) {
-                          String email = _emailController.text.trim();
-                          String password = _passwordController.text.trim();
-
-                          // Proceed with normal login
+                          // Proceed with login if the form is valid
                           context.read<LoginBloc>().add(
-                            LoginUserEvent(
-                              context: context,
-                              email: email,
-                              password: password,
-                            ),
-                          );
+                                LoginUserEvent(
+                                  context: context,
+                                  email: _emailController.text,
+                                  password: _passwordController.text,
+                                ),
+                              );
                         }
                       },
                       width: double.infinity,
@@ -120,7 +110,7 @@ class LoginView extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
 
-                  // Register Option
+                  // Register now
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -128,11 +118,11 @@ class LoginView extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           context.read<LoginBloc>().add(
-                            NavigateRegisterScreenEvent(
-                              context: context,
-                              destination: const RegisterView(),
-                            ),
-                          );
+                                NavigateRegisterScreenEvent(
+                                  context: context,
+                                  destination: const RegisterView(),
+                                ),
+                              );
                         },
                         child: const Text(
                           "Register now",

@@ -1,14 +1,12 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_booking/core/common/snackbar/my_snackbar.dart';
-import 'package:hotel_booking/features/auth/data/data_source/remote_datasource/user_profile_service.dart';
-import 'package:hotel_booking/features/auth/domain/use_case/login_usecase.dart';
-import 'package:hotel_booking/features/auth/presentation/view_model/signup/register_bloc.dart';
-import 'package:hotel_booking/features/dashboard1/admin_dashboard_view.dart';
-import 'package:hotel_booking/features/dashboard1/dashboard_view.dart';
-import 'package:hotel_booking/features/home/presentation/view_model/home_cubit.dart';
-
+import 'package:sajilobihe_event_venue_booking_system/core/common/snackbar/my_snackbar.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/data/data_source/remote_datasource/user_profile_service.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/domain/use_case/login_usecase.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/auth/presentation/view_model/signup/register_bloc.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/dashboard/presentation/view/admin_dashboard_view.dart';
+import 'package:sajilobihe_event_venue_booking_system/features/dashboard/presentation/view/dashboard_view.dart';
 
 import './login_state.dart';
 
@@ -16,17 +14,15 @@ part 'login_event.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final RegisterBloc _registerBloc;
-  final HomeCubit _homeCubit;
+
   final LoginUsecase _loginUsecase;
   final UserProfileService _userProfileService;
 
   LoginBloc({
     required RegisterBloc registerBloc,
-    required HomeCubit homeCubit,
     required LoginUsecase loginUsecase,
     required UserProfileService userProfileService,
   })  : _registerBloc = registerBloc,
-        _homeCubit = homeCubit,
         _loginUsecase = loginUsecase,
         _userProfileService = userProfileService,
         super(LoginState.initial()) {
