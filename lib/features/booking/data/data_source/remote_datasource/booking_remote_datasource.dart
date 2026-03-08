@@ -25,7 +25,6 @@ class BookingRemoteDataSourceImpl implements BookingRemoteDataSource {
         throw Exception('Failed to create booking');
       }
     } on DioException catch (dioErr) {
-      // Re-throw to let the BLoC handle it
       rethrow;
     }
   }
