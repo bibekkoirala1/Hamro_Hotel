@@ -40,7 +40,7 @@ class AdminBookingPage extends StatelessWidget {
     return BlocProvider<BookingBloc>(
       create: (_) => getIt<BookingBloc>()..add(LoadAllBookingsEvent()),
       child: Scaffold(
-        backgroundColor: Colors.grey[100], // Light background
+        backgroundColor: Colors.grey[100], 
         appBar: AppBar(
           title: const Text("Bookings Management"),
           backgroundColor: Colors.white,
