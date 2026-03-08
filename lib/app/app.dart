@@ -9,7 +9,6 @@ import 'package:sajilobihe_event_venue_booking_system/features/venue/presentatio
 
 import 'package:sajilobihe_event_venue_booking_system/features/splash/presentation/view/splash_view.dart';
 import 'package:sajilobihe_event_venue_booking_system/features/splash/presentation/view_model/splash_cubit.dart';
-// Import VenueBloc for venue management
 
 
 class MyApp extends StatelessWidget {
