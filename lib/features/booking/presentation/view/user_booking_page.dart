@@ -40,7 +40,7 @@ class UserBookingPage extends StatelessWidget {
     return BlocProvider<BookingBloc>(
       create: (_) => getIt<BookingBloc>()..add(LoadUserBookingsEvent()),
       child: Scaffold(
-        backgroundColor: Colors.grey[100], // Light background for a modern feel
+        backgroundColor: Colors.grey[100], 
         appBar: AppBar(
           title: const Text("My Bookings"),
           backgroundColor: Colors.redAccent,
