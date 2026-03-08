@@ -25,7 +25,6 @@ class LoginView extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Logo with elephants and design
                   Image.asset(
                     'assets/images/logo.png', // Add your logo image path here
                     height: 200,
