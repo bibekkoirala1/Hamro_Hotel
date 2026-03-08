@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:sajilobihe_event_venue_booking_system/app/constants/api_endpoints.dart';
 import 'package:sajilobihe_event_venue_booking_system/features/venue/data/model/venue_model.dart';
 
-/// Abstract contract for venue-related API calls.
 abstract class VenueRemoteDataSource {
   Future<List<VenueModel>> getAllVenues();
   Future<VenueModel> getVenueById(String id);
