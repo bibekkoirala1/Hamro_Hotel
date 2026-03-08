@@ -1,4 +1,3 @@
-// edit_profile_view.dart
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:sajilobihe_event_venue_booking_system/features/auth/data/data_source/remote_datasource/user_profile_service.dart';
@@ -58,7 +57,6 @@ class _EditProfileViewState extends State<EditProfileView> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Profile updated successfully")),
       );
-      // Return updated user info to refresh the profile view if needed
       Navigator.pop(context, updatedUser);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
