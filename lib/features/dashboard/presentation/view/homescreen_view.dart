@@ -345,10 +345,9 @@ class _VenueCard extends StatelessWidget {
           width: 180, // Ensures a proper width
           padding: const EdgeInsets.all(12),
           child: Column(
-            mainAxisSize: MainAxisSize.min, // Allows Column to shrink if needed
+            mainAxisSize: MainAxisSize.min, 
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Venue Image
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: imageUrl.contains("assets")
